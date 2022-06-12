@@ -10,7 +10,7 @@ Windows10 / VSCode / Ruby ruby 2.7.2p137
 
 |コマンド|内容|
 |:-----------|:---|  
-|enter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |次のの町村名を表示|  
+|enter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |次のの町村名を表示|  
 |s |選挙区市町村名.dsvのファイル名で保存して終了|  
 p |次の町村名7行を表示  
 ls |編集されたものの番号を表示　ls 20のようにすると2番以降の10行を表示  
