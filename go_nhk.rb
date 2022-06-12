@@ -88,14 +88,18 @@ def edit_csv(csv, scsv, dat)
       [opt, token].flatten.compact.each {|no|
         if no.include?('-')
           f, e = no.split('-').map {|n| n.to_i }
-          f.step(e) {|n| scsv.push([n, name+dat[n-1].gsub('t','丁目')])}
+          f.step(e) {|n|
+            scsv.push([n, name+dat[n-1].gsub('t','丁目')])
+            no, labs = scsv[-1]; puts " > #{no} #{labs}" }
         else
           n = no.to_i
           scsv.push([n, name+dat[n-1].gsub('t','丁目')])
+          no, labs = scsv[-1]; puts " > #{no} #{labs}" 
         end
         csv[ps-1][2] = '*'
         scsv = scsv.sort
       }
+      count = 1
     end
   }
   scsv.sort
@@ -105,7 +109,7 @@ def put_csv(path, csv)
   File.open(path, "w", 0755) {|f| f.print csv.map{|r| r.join(',') }.join("\n") }
 end
 
-path, area = ARGV
+path, area, dat_path = ARGV
 if area then
   dsv_path = area+'.dsv'
   dat_path = area+'.dat' if !dat_path
